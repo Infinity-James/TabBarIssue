@@ -91,9 +91,10 @@ struct ContentView: View {
                     ContentView()
                         .fullBackground(.pink)
                         .homeToolbar()
+                        .navigationTitle("Inner")
                 }
                 .tabItem1()
-                
+
                 NavigationView {
                     ContentView()
                         .fullBackground(.green)
@@ -101,6 +102,7 @@ struct ContentView: View {
                 }
                 .tabItem2()
             }
+            .navigationTitle("Outer")
         }
     }
 }
@@ -145,7 +147,7 @@ struct ContentView: View {
 }
 
 #Preview("Double Layer - Level 3 - Working") {
-    NavigationView {
+    NavigationStack {
         TabView {
             NavigationView {
                 ContentView()
